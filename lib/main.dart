@@ -1,11 +1,16 @@
 import 'package:flashcards_quiz/views/home_screen.dart';
+import 'package:flashcards_quiz/views/webview_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    const MaterialApp(
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      home: MyApp(),
+    ),
   );
   SystemChrome.setPreferredOrientations(
     [
@@ -20,13 +25,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Riddles',
-      supportedLocales: const [
-        Locale('en'),
-        Locale('pt'),
-      ],
+      title: 'MMAbet',
+      supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: l10n.lang.compareTo('en_us') == 0 ? const HomePage() : const WebViewPage(),
     );
   }
 }

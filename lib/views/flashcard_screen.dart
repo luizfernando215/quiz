@@ -1,16 +1,17 @@
+import 'dart:developer' as dev;
+import 'dart:math';
+
 import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:flashcards_quiz/views/quiz_screen.dart';
 import 'package:flashcards_quiz/widgets/flash_card_widget.dart';
 import 'package:flashcards_quiz/widgets/linear_progress_indicator_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class NewCard extends StatefulWidget {
   final String topicName;
   final List<dynamic> typeOfTopic;
-  const NewCard(
-      {super.key, required this.topicName, required this.typeOfTopic});
+  const NewCard({super.key, required this.topicName, required this.typeOfTopic});
 
   @override
   State<NewCard> createState() => _NewCardState();
@@ -26,8 +27,7 @@ class _NewCardState extends State<NewCard> {
     const Color cardColor = Color(0xFF4993FA);
 
     // Get a list of 4 randomly selected Questions objects
-    Map<dynamic, dynamic> randomQuestionsMap =
-        getRandomQuestionsAndOptions(widget.typeOfTopic, 4);
+    Map<dynamic, dynamic> randomQuestionsMap = getRandomQuestionsAndOptions(widget.typeOfTopic, 4);
 
     List<dynamic> randomQuestions = randomQuestionsMap.keys.toList();
     dynamic randomOptions = randomQuestionsMap.values.toList();
@@ -71,28 +71,28 @@ class _NewCardState extends State<NewCard> {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.92,
                 height: MediaQuery.of(context).size.height * 0.60,
-                child: AppinioSwiper(
+                child: Padding(
                   padding: const EdgeInsets.all(10),
-                  loop: true,
-                  backgroundCardsCount: 2,
-                  swipeOptions: const AppinioSwipeOptions.all(),
-                  unlimitedUnswipe: true,
-                  controller: controller,
-                  unswipe: _unswipe,
-                  onSwipe: _swipe,
-                  onEnd: _onEnd,
-                  cardsCount: randomQuestions.length,
-                  cardsBuilder: (BuildContext context, int index) {
-                    var cardIndex = randomQuestions[index];
-                    return FlipCardsWidget(
-                      bgColor: cardColor,
-                      cardsLenght: randomQuestions.length,
-                      currentIndex: index + 1,
-                      answer: cardIndex.correctAnswer.text,
-                      question: cardIndex.text,
-                      currentTopic: widget.topicName,
-                    );
-                  },
+                  child: AppinioSwiper(
+                    loop: true,
+                    backgroundCardCount: 2,
+                    swipeOptions: const SwipeOptions.all(),
+                    controller: controller,
+                    onSwipeEnd: _swipeEnd,
+                    onEnd: _onEnd,
+                    cardCount: randomQuestions.length,
+                    cardBuilder: (BuildContext context, int index) {
+                      var cardIndex = randomQuestions[index];
+                      return FlipCardsWidget(
+                        bgColor: cardColor,
+                        cardsLenght: randomQuestions.length,
+                        currentIndex: index + 1,
+                        answer: cardIndex.correctAnswer.text,
+                        question: cardIndex.text,
+                        currentTopic: widget.topicName,
+                      );
+                    },
+                  ),
                 ),
               ),
               const SizedBox(
@@ -201,19 +201,25 @@ Map<dynamic, dynamic> getRandomQuestionsAndOptions(
 //   return randomQuestions;
 // }
 
-void _swipe(int index, AppinioSwiperDirection direction) {
-  print("the card was swiped to the: ${direction.name}");
-  print(index);
-}
-
-void _unswipe(bool unswiped) {
-  if (unswiped) {
-    print("SUCCESS: card was unswiped");
-  } else {
-    print("FAIL: no card left to unswipe");
+void _swipeEnd(int previousIndex, int targetIndex, SwiperActivity activity) {
+  switch (activity) {
+    case Swipe():
+      dev.log('The card was swiped to the : ${activity.direction}');
+      dev.log('previous index: $previousIndex, target index: $targetIndex');
+      break;
+    case Unswipe():
+      dev.log('A ${activity.direction.name} swipe was undone.');
+      dev.log('previous index: $previousIndex, target index: $targetIndex');
+      break;
+    case CancelSwipe():
+      dev.log('A swipe was cancelled');
+      break;
+    case DrivenActivity():
+      dev.log('Driven Activity');
+      break;
   }
 }
 
 void _onEnd() {
-  print("end reached!");
+  dev.log('end reached!');
 }
