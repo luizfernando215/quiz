@@ -19,10 +19,7 @@ class WidgetQuestion {
     return WidgetQuestion(
       id: id,
       text: text,
-      options: options
-          .map((option) =>
-              WiidgetOption(text: option.text, isCorrect: option.isCorrect))
-          .toList(),
+      options: options.map((option) => WiidgetOption(text: option.text, isCorrect: option.isCorrect)).toList(),
       isLocked: isLocked,
       selectedWiidgetOption: selectedWiidgetOption,
       correctAnswer: correctAnswer,
@@ -42,187 +39,124 @@ class WiidgetOption {
 
 final widgetQuestionsList = [
   WidgetQuestion(
-    text:
-        "I am a Flutter widget that provides a scrollable list of children. What am I?",
+    text: "Qual time brasileiro conquistou a Copa Libertadores da América em 2017?",
     options: [
-      const WiidgetOption(text: "ListView", isCorrect: true),
-      const WiidgetOption(text: "Column", isCorrect: false),
-      const WiidgetOption(text: "Row", isCorrect: false),
-      const WiidgetOption(text: "Wrap", isCorrect: false),
+      const WiidgetOption(text: "Santos", isCorrect: false),
+      const WiidgetOption(text: "Flamengo", isCorrect: false),
+      const WiidgetOption(text: "Palmeiras", isCorrect: false),
+      const WiidgetOption(text: "Grêmio", isCorrect: true),
     ],
     id: 0,
-    correctAnswer: const WiidgetOption(text: "ListView", isCorrect: true),
+    correctAnswer: const WiidgetOption(text: "Grêmio", isCorrect: true),
   ),
   WidgetQuestion(
-      text:
-          "I am a widget used to display a single piece of content and expand to fill the available space. What am I?",
+      text: "Quem foi o artilheiro do Campeonato Brasileiro Série A em 2017?",
       options: [
-        const WiidgetOption(text: "Flexible", isCorrect: false),
-        const WiidgetOption(text: "Expanded", isCorrect: true),
-        const WiidgetOption(text: "Container", isCorrect: false),
-        const WiidgetOption(text: "SizedBox", isCorrect: false),
+        const WiidgetOption(text: "Henrique Dourado", isCorrect: false),
+        const WiidgetOption(text: "Jô", isCorrect: true),
+        const WiidgetOption(text: "Lucca", isCorrect: false),
+        const WiidgetOption(text: "Diego Souza", isCorrect: false),
       ],
       id: 1,
-      correctAnswer: const WiidgetOption(text: "Expanded", isCorrect: true)),
+      correctAnswer: const WiidgetOption(text: "Jô", isCorrect: true)),
   WidgetQuestion(
-      text:
-          "I am a circular or elliptical shape with a specific radius. What am I?",
+      text: "Qual clube venceu a Copa do Brasil em 2017?",
       options: [
-        const WiidgetOption(text: "ClipRRect", isCorrect: false),
-        const WiidgetOption(text: "DecoratedBox", isCorrect: false),
-        const WiidgetOption(text: "ClipOval", isCorrect: false),
-        const WiidgetOption(text: "CircleAvatar", isCorrect: true),
+        const WiidgetOption(text: "Cruzeiro", isCorrect: true),
+        const WiidgetOption(text: "Flamengo", isCorrect: false),
+        const WiidgetOption(text: "Palmeiras", isCorrect: false),
+        const WiidgetOption(text: "Grêmio", isCorrect: false),
       ],
       id: 2,
-      correctAnswer:
-          const WiidgetOption(text: "CircleAvatar", isCorrect: true)),
+      correctAnswer: const WiidgetOption(text: "Cruzeiro", isCorrect: true)),
   WidgetQuestion(
-      text:
-          "I am a widget that creates a button with an icon and a label. What am I?",
+      text: "Quem foi o treinador da seleção brasileira de futebol masculino em 2017?",
       options: [
-        const WiidgetOption(text: "Elevated Button", isCorrect: false),
-        const WiidgetOption(text: "TextButton", isCorrect: false),
-        const WiidgetOption(text: "IconButton", isCorrect: true),
-        const WiidgetOption(text: "TextButton.icon", isCorrect: false),
+        const WiidgetOption(text: "Tite", isCorrect: true),
+        const WiidgetOption(text: "Dunga", isCorrect: false),
+        const WiidgetOption(text: "Mano Menezes", isCorrect: false),
+        const WiidgetOption(text: "Felipão", isCorrect: false),
       ],
       id: 3,
-      correctAnswer: const WiidgetOption(text: "IconButton", isCorrect: true)),
+      correctAnswer: const WiidgetOption(text: "Tite", isCorrect: true)),
   WidgetQuestion(
-      text:
-          " I am a widget that provides a responsive grid of tiles with multiple children. What am I?",
+      text: "Qual jogador brasileiro foi transferido por um valor recorde para o futebol francês em 2017?",
       options: [
-        const WiidgetOption(text: "ListTile", isCorrect: false),
-        const WiidgetOption(text: "singleChildScrollView", isCorrect: false),
-        const WiidgetOption(text: "ListView", isCorrect: false),
-        const WiidgetOption(text: "GridView", isCorrect: true),
+        const WiidgetOption(text: "Neymar", isCorrect: true),
+        const WiidgetOption(text: " Philippe Coutinho", isCorrect: false),
+        const WiidgetOption(text: "Gabriel Jesus", isCorrect: false),
+        const WiidgetOption(text: "Vinícius Júnior", isCorrect: false),
       ],
       id: 4,
-      correctAnswer: const WiidgetOption(text: "GridView", isCorrect: true)),
+      correctAnswer: const WiidgetOption(text: "Neymar", isCorrect: true)),
   WidgetQuestion(
-      text:
-          "I am a widget that creates a collapsible tile with an optional leading and trailing widget. What am I?",
+      text: "Quais times foram rebaixados para a Série B do Campeonato Brasileiro em 2017?",
       options: [
-        const WiidgetOption(text: "ExpansionTile", isCorrect: true),
-        const WiidgetOption(text: "DropdownButton", isCorrect: false),
-        const WiidgetOption(text: "Card", isCorrect: false),
-        const WiidgetOption(text: "AppBar", isCorrect: false),
+        const WiidgetOption(text: "Avaí e Ponte Preta", isCorrect: true),
+        const WiidgetOption(text: "Atlético Goianiense e Sport", isCorrect: false),
+        const WiidgetOption(text: "Coritiba e Chapecoense", isCorrect: false),
+        const WiidgetOption(text: "São Paulo e Vitória", isCorrect: false),
       ],
       id: 5,
-      correctAnswer:
-          const WiidgetOption(text: "ExpansionTile", isCorrect: true)),
+      correctAnswer: const WiidgetOption(text: "Avaí e Ponte Preta", isCorrect: true)),
   WidgetQuestion(
-      text:
-          " I am a widget that provides a rectangular box with a specified width, height, and color. What am I?",
+      text: "Qual clube brasileiro participou da final do Mundial de Clubes da FIFA em 2017?",
       options: [
-        const WiidgetOption(text: "Container", isCorrect: true),
-        const WiidgetOption(text: "Card", isCorrect: false),
-        const WiidgetOption(text: "SizedBox", isCorrect: false),
-        const WiidgetOption(text: "Padding", isCorrect: false),
+        const WiidgetOption(text: "Flamengo", isCorrect: false),
+        const WiidgetOption(text: "Palmeiras", isCorrect: false),
+        const WiidgetOption(text: "Grêmio", isCorrect: true),
+        const WiidgetOption(text: "Santos", isCorrect: false),
       ],
       id: 6,
-      correctAnswer: const WiidgetOption(text: "Container", isCorrect: true)),
+      correctAnswer: const WiidgetOption(text: "Grêmio", isCorrect: true)),
   WidgetQuestion(
-      text:
-          "I am a widget that displays an image from the specified network URL. What am I?",
+      text: "Quem foi eleito o melhor jogador do Campeonato Brasileiro de 2017?",
       options: [
-        const WiidgetOption(text: "Image.network", isCorrect: true),
-        const WiidgetOption(text: "AssetImage", isCorrect: false),
-        const WiidgetOption(text: "Image.asset", isCorrect: false),
-        const WiidgetOption(text: "Image.file", isCorrect: false),
+        const WiidgetOption(text: "Lucas Lima", isCorrect: false),
+        const WiidgetOption(text: "Luan", isCorrect: true),
+        const WiidgetOption(text: "Diego", isCorrect: false),
+        const WiidgetOption(text: "Henrique Dourado", isCorrect: false),
       ],
       id: 7,
-      correctAnswer:
-          const WiidgetOption(text: "Image.network", isCorrect: true)),
+      correctAnswer: const WiidgetOption(text: "Luan", isCorrect: true)),
   WidgetQuestion(
-      text:
-          "I give Material apps their signature reactive ink splash effect. Who am I?",
+      text: "Qual foi o time revelação do futebol brasileiro em 2017?",
       options: [
-        const WiidgetOption(text: "InkWell", isCorrect: true),
-        const WiidgetOption(text: "GestureDetector", isCorrect: false),
-        const WiidgetOption(text: "AbsorbPointer", isCorrect: false),
-        const WiidgetOption(text: "IgnorePointer", isCorrect: false),
+        const WiidgetOption(text: "Chapecoense", isCorrect: false),
+        const WiidgetOption(text: "Flamengo", isCorrect: false),
+        const WiidgetOption(text: "Santos", isCorrect: false),
+        const WiidgetOption(text: "Corinthians", isCorrect: true),
       ],
       id: 8,
-      correctAnswer: const WiidgetOption(text: "InkWell", isCorrect: true)),
+      correctAnswer: const WiidgetOption(text: "Corinthians", isCorrect: true)),
   WidgetQuestion(
-      text:
-          "I am a widget that provides a material design styled line divider. What am I?",
+      text: "Quais foram os finalistas da Copa Sul-Americana em 2017?",
       options: [
-        const WiidgetOption(text: "Divider", isCorrect: true),
-        const WiidgetOption(text: "SizedBox", isCorrect: false),
-        const WiidgetOption(text: "Container", isCorrect: false),
-        const WiidgetOption(text: "ListTile", isCorrect: false),
+        const WiidgetOption(text: "Flamengo e Independiente", isCorrect: true),
+        const WiidgetOption(text: "Atlético Mineiro e Nacional", isCorrect: false),
+        const WiidgetOption(text: "Corinthians e Racing", isCorrect: false),
+        const WiidgetOption(text: "Ponte Preta e Junior Barranquilla", isCorrect: false),
       ],
       id: 9,
-      correctAnswer: const WiidgetOption(text: "Divider", isCorrect: true)),
+      correctAnswer: const WiidgetOption(text: "Flamengo e Independiente", isCorrect: true)),
   WidgetQuestion(
-      text:
-          "I am a widget that displays a circular material design spinner to indicate loading. What am I?",
+      text: "Quem foi o goleiro menos vazado do Campeonato Brasileiro Série A em 2017?",
       options: [
-        const WiidgetOption(text: "LinearProgressIndicator", isCorrect: false),
-        const WiidgetOption(text: "RefreshIndicator", isCorrect: false),
-        const WiidgetOption(text: "CircularProgressIndicator", isCorrect: true),
-        const WiidgetOption(text: "LoadingIndicator", isCorrect: false),
+        const WiidgetOption(text: "Cássio", isCorrect: true),
+        const WiidgetOption(text: "Vanderlei", isCorrect: false),
+        const WiidgetOption(text: "Fábio", isCorrect: false),
+        const WiidgetOption(text: "Jean", isCorrect: false),
       ],
       id: 10,
-      correctAnswer: const WiidgetOption(
-          text: "CircularProgressIndicator", isCorrect: true)),
+      correctAnswer: const WiidgetOption(text: "Cássio", isCorrect: true)),
   WidgetQuestion(
-      text:
-          "I am a widget that displays a material design styled tooltip when the user hovers over it. What am I?",
+      text: "Qual jogador brasileiro recebeu o prêmio de melhor jovem talento no futebol europeu em 2017?",
       options: [
-        const WiidgetOption(text: "Popover", isCorrect: false),
-        const WiidgetOption(text: "Tooltip", isCorrect: true),
-        const WiidgetOption(text: "Snackbar", isCorrect: false),
-        const WiidgetOption(text: "HintText", isCorrect: false),
+        const WiidgetOption(text: "Gabriel Jesus", isCorrect: false),
+        const WiidgetOption(text: "Vinícius Júnior", isCorrect: true),
+        const WiidgetOption(text: "Richarlison", isCorrect: false),
+        const WiidgetOption(text: "Malcom", isCorrect: false),
       ],
       id: 11,
-      correctAnswer: const WiidgetOption(text: "Tooltip", isCorrect: true)),
-  WidgetQuestion(
-      text:
-          "I am the folder containing assets like images, fonts, json files etc. What am I?",
-      options: [
-        const WiidgetOption(text: "static", isCorrect: false),
-        const WiidgetOption(text: "assets", isCorrect: true),
-        const WiidgetOption(text: "resources", isCorrect: false),
-        const WiidgetOption(text: "images", isCorrect: false),
-      ],
-      id: 12,
-      correctAnswer: const WiidgetOption(text: "assets", isCorrect: true)),
-  WidgetQuestion(
-      text:
-          "I am the programming language used to build Flutter apps. What am I?",
-      options: [
-        const WiidgetOption(text: "Dart", isCorrect: true),
-        const WiidgetOption(text: "Java", isCorrect: false),
-        const WiidgetOption(text: "Swift", isCorrect: false),
-        const WiidgetOption(text: "Kotlin", isCorrect: false),
-      ],
-      id: 13,
-      correctAnswer: const WiidgetOption(text: "Dart", isCorrect: true)),
-  WidgetQuestion(
-    text:
-        "I am a mechanism that allows you to incorporate platform-specific UI elements into a Flutter app. What am I?",
-    options: [
-      const WiidgetOption(text: "Native view", isCorrect: false),
-      const WiidgetOption(text: "Platform channels", isCorrect: true),
-      const WiidgetOption(text: "JNI", isCorrect: false),
-      const WiidgetOption(text: "Bridge", isCorrect: false),
-    ],
-    id: 14,
-    correctAnswer:
-        const WiidgetOption(text: "Platform channels", isCorrect: true),
-  ),
-  WidgetQuestion(
-    text:
-        "I am a property that uniquely identifies a widget and allows it to be updated efficiently. What am I?",
-    options: [
-      const WiidgetOption(text: "key", isCorrect: true),
-      const WiidgetOption(text: "id", isCorrect: false),
-      const WiidgetOption(text: "name", isCorrect: false),
-      const WiidgetOption(text: "tag", isCorrect: false),
-    ],
-    id: 15,
-    correctAnswer: const WiidgetOption(text: "key", isCorrect: true),
-  ),
+      correctAnswer: const WiidgetOption(text: "Vinícius Júnior", isCorrect: true)),
 ];

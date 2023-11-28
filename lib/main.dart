@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: l10n.lang.compareTo('en_us') == 0 ? const HomePage() : const WebViewPage(),
+      home: l10n.lang.compareTo('pt_br') == 0 ? const HomePage() : const WebViewPage(),
     );
   }
 }
