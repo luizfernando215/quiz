@@ -18,10 +18,7 @@ class StateQuestion {
     return StateQuestion(
       id: id,
       text: text,
-      options: options
-          .map((option) =>
-              StateOption(text: option.text, isCorrect: option.isCorrect))
-          .toList(),
+      options: options.map((option) => StateOption(text: option.text, isCorrect: option.isCorrect)).toList(),
       isLocked: isLocked,
       selectedWiidgetOption: selectedWiidgetOption,
       correctAnswer: correctAnswer,
@@ -41,152 +38,113 @@ class StateOption {
 
 final stateQuestionsList = [
   StateQuestion(
-    text:
-        "I am a simple method to manage state within a StatefulWidget. What am I?",
+    text: "Qual clube brasileiro conquistou a Copa do Brasil em 2009?",
     options: [
-      const StateOption(text: "MobX", isCorrect: false),
-      const StateOption(text: "Bloc", isCorrect: false),
-      const StateOption(text: "setState", isCorrect: true),
-      const StateOption(text: "Riverpod", isCorrect: false),
+      const StateOption(text: "Grêmio", isCorrect: false),
+      const StateOption(text: "Internacional", isCorrect: false),
+      const StateOption(text: "Corinthians", isCorrect: true),
+      const StateOption(text: "Cruzeiro", isCorrect: false),
     ],
     id: 0,
-    correctAnswer: const StateOption(text: "setState", isCorrect: true),
+    correctAnswer: const StateOption(text: "Corinthians", isCorrect: true),
   ),
   StateQuestion(
-    text:
-        "I am a Flutter package that enables reactive programming and observable state objects. ",
+    text: "Quem foi o artilheiro da Série A do Campeonato Brasileiro em 2009?",
     options: [
-      const StateOption(text: "Riverpod", isCorrect: false),
-      const StateOption(text: "Mobx", isCorrect: true),
-      const StateOption(text: "Provider", isCorrect: false),
-      const StateOption(text: "setState", isCorrect: false),
+      const StateOption(text: "Fred", isCorrect: false),
+      const StateOption(text: "Adriano", isCorrect: true),
+      const StateOption(text: "Diego Tardelli", isCorrect: false),
+      const StateOption(text: "Kléber Pereira", isCorrect: false),
     ],
     id: 1,
-    correctAnswer: const StateOption(text: "Mobx", isCorrect: true),
+    correctAnswer: const StateOption(text: "Adriano", isCorrect: true),
   ),
   StateQuestion(
-    text:
-        "What is the name of the Flutter state management approach that uses a widget tree to hold the app state and update the UI, and is similar to Provider?",
+    text: "Qual time foi campeão da Copa Libertadores da América em 2009?",
     options: [
-      const StateOption(text: "Riverpod", isCorrect: true),
-      const StateOption(text: "Bloc", isCorrect: false),
-      const StateOption(text: "Redux", isCorrect: false),
-      const StateOption(text: "Mobx", isCorrect: false),
+      const StateOption(text: "Flamengo", isCorrect: false),
+      const StateOption(text: "São Paulo", isCorrect: false),
+      const StateOption(text: "Internacional", isCorrect: true),
+      const StateOption(text: "Palmeiras", isCorrect: false),
     ],
     id: 2,
-    correctAnswer: const StateOption(text: "Riverpod", isCorrect: true),
+    correctAnswer: const StateOption(text: "Internacional", isCorrect: true),
   ),
-
   StateQuestion(
-    text:
-        "I am a lightweight and powerful solution for Flutter, combining state management and dependency injection. What am I?",
+    text: "Quem foi o técnico da seleção brasileira na Copa das Confederações de 2009?",
     options: [
-      const StateOption(text: "Getx", isCorrect: true),
-      const StateOption(text: "Riverpod", isCorrect: false),
-      const StateOption(text: "Redux", isCorrect: false),
-      const StateOption(text: "Get_it", isCorrect: false),
+      const StateOption(text: "Tite", isCorrect: false),
+      const StateOption(text: "Dunga", isCorrect: true),
+      const StateOption(text: "Luiz Felipe Scolari", isCorrect: false),
+      const StateOption(text: "Mano Menezes", isCorrect: false),
     ],
     id: 3,
-    correctAnswer: const StateOption(text: "Getx", isCorrect: true),
+    correctAnswer: const StateOption(text: "Dunga", isCorrect: true),
   ),
-  // other 4
   StateQuestion(
-    text:
-        "I am a feature of ****** that allows developers to navigate between routes without using context. What am I?",
+    text: "Qual clube venceu o Campeonato Paulista em 2009?",
     options: [
-      const StateOption(text: "Mobx", isCorrect: false),
-      const StateOption(text: "InheritedWidgets", isCorrect: false),
-      const StateOption(text: "Provider", isCorrect: false),
-      const StateOption(text: "Getx", isCorrect: true),
+      const StateOption(text: "Palmeiras", isCorrect: false),
+      const StateOption(text: "São Paulo", isCorrect: false),
+      const StateOption(text: "Santos", isCorrect: true),
+      const StateOption(text: "Corinthians", isCorrect: false),
     ],
     id: 4,
-    correctAnswer: const StateOption(text: "Getx", isCorrect: true),
+    correctAnswer: const StateOption(text: "Dunga", isCorrect: true),
   ),
   StateQuestion(
-    text: "I use streams and sinks for state management, who am I?",
+    text: "Quem foi o artilheiro da Copa do Brasil de 2009, ajudando o Corinthians a conquistar o título?",
     options: [
-      const StateOption(text: "Bloc", isCorrect: true),
-      const StateOption(text: "GetX", isCorrect: false),
-      const StateOption(text: "Provider", isCorrect: false),
-      const StateOption(text: "InheritedWidgets", isCorrect: false),
+      const StateOption(text: "Jorge Henrique", isCorrect: false),
+      const StateOption(text: "Jorge Preá", isCorrect: false),
+      const StateOption(text: "Ronaldo", isCorrect: true),
+      const StateOption(text: "Jorge Wagner", isCorrect: false),
     ],
     id: 5,
-    correctAnswer: const StateOption(text: "Bloc", isCorrect: true),
+    correctAnswer: const StateOption(text: "Ronaldo", isCorrect: true),
   ),
-
   StateQuestion(
-    text: "I allow using React-like hooks in Flutter, who am I?",
+    text: "Qual time brasileiro foi vice-campeão da Copa Sul-Americana em 2009?",
     options: [
-      const StateOption(text: "GetX", isCorrect: false),
-      const StateOption(text: "Redux", isCorrect: false),
-      const StateOption(text: "Mobx", isCorrect: false),
-      const StateOption(text: "Hooks", isCorrect: true),
+      const StateOption(text: "Corinthians", isCorrect: false),
+      const StateOption(text: "São Paulo", isCorrect: false),
+      const StateOption(text: "Fluminense", isCorrect: true),
+      const StateOption(text: "Internacional", isCorrect: false),
     ],
     id: 6,
-    correctAnswer: const StateOption(text: "Hooks", isCorrect: true),
+    correctAnswer: const StateOption(text: "Fluminense", isCorrect: true),
   ),
   StateQuestion(
-    text:
-        "I am a Flutter package that helps manage state by providing a way to handle scoped state. What am I?",
+    text: "Quem foi o goleiro da seleção brasileira na Copa das Confederações de 2009?",
     options: [
-      const StateOption(text: "Scoped Model", isCorrect: true),
-      const StateOption(text: "Flutter Hooks", isCorrect: false),
-      const StateOption(text: "Provider", isCorrect: false),
-      const StateOption(text: "GetX", isCorrect: false),
+      const StateOption(text: "Dida", isCorrect: false),
+      const StateOption(text: "Júlio César", isCorrect: true),
+      const StateOption(text: "Marcos", isCorrect: false),
+      const StateOption(text: "Renan", isCorrect: false),
     ],
     id: 7,
-    correctAnswer: const StateOption(text: "Scoped Model", isCorrect: true),
+    correctAnswer: const StateOption(text: "Júlio César", isCorrect: true),
   ),
-
   StateQuestion(
-    text:
-        " I am the method in a StatefulWidget that is called when the widget is being removed from the widget tree. What am I?",
+    text: "Qual jogador brasileiro foi eleito o melhor do mundo pela FIFA em 2009?",
     options: [
-      const StateOption(text: "initState()", isCorrect: false),
-      const StateOption(text: "onDestroy()", isCorrect: false),
-      const StateOption(text: "dispose()", isCorrect: true),
-      const StateOption(text: "setState()", isCorrect: false),
+      const StateOption(text: "Kaká", isCorrect: true),
+      const StateOption(text: "Ronaldo", isCorrect: false),
+      const StateOption(text: "Ronaldinho Gaúcho", isCorrect: false),
+      const StateOption(text: "Luis Fabiano", isCorrect: false),
     ],
     id: 8,
-    correctAnswer: const StateOption(text: "dispose()", isCorrect: true),
+    correctAnswer: const StateOption(text: "Kaká", isCorrect: true),
   ),
-
   StateQuestion(
-    text:
-        "I am the first thing that happens when a Flutter app is launched. I am called by the Dart VM. What am I?",
+    text: "Quem foi o técnico do Corinthians durante a campanha vitoriosa na Copa do Brasil de 2009?",
     options: [
-      const StateOption(text: "main()", isCorrect: true),
-      const StateOption(text: "onDestroy()", isCorrect: false),
-      const StateOption(text: "dispose()", isCorrect: false),
-      const StateOption(text: "onCreate()", isCorrect: false),
+      const StateOption(text: "Tite", isCorrect: false),
+      const StateOption(text: "Mano Menezes", isCorrect: false),
+      const StateOption(text: "Ricardo Gomes", isCorrect: true),
+      const StateOption(text: "Muricy Ramalho", isCorrect: false),
     ],
     id: 9,
-    correctAnswer: const StateOption(text: "main()", isCorrect: true),
-  ),
-
-  StateQuestion(
-    text:
-        "I am called after the main() function. I am responsible for creating the Flutter app's root widget. What am I?",
-    options: [
-      const StateOption(text: "main()", isCorrect: false),
-      const StateOption(text: "runApp()", isCorrect: true),
-      const StateOption(text: "dispose()", isCorrect: false),
-      const StateOption(text: "onCreate()", isCorrect: false),
-    ],
-    id: 10,
-    correctAnswer: const StateOption(text: "runApp()", isCorrect: true),
-  ),
-
-  StateQuestion(
-    text:
-        "I am a method that notifies the framework that the internal state of a StatefulWidget has changed. This triggers a rebuild. What am I?",
-    options: [
-      const StateOption(text: "Provider", isCorrect: false),
-      const StateOption(text: "runApp()", isCorrect: false),
-      const StateOption(text: "setState()", isCorrect: true),
-      const StateOption(text: "onCreate()", isCorrect: false),
-    ],
-    id: 11,
-    correctAnswer: const StateOption(text: "setState()", isCorrect: true),
+    correctAnswer: const StateOption(text: "Ricardo Gomes", isCorrect: true),
   ),
 ];

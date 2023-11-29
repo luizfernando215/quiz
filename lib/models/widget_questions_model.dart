@@ -130,33 +130,14 @@ final widgetQuestionsList = [
       id: 8,
       correctAnswer: const WiidgetOption(text: "Corinthians", isCorrect: true)),
   WidgetQuestion(
-      text: "Quais foram os finalistas da Copa Sul-Americana em 2017?",
-      options: [
-        const WiidgetOption(text: "Flamengo e Independiente", isCorrect: true),
-        const WiidgetOption(text: "Atlético Mineiro e Nacional", isCorrect: false),
-        const WiidgetOption(text: "Corinthians e Racing", isCorrect: false),
-        const WiidgetOption(text: "Ponte Preta e Junior Barranquilla", isCorrect: false),
-      ],
-      id: 9,
-      correctAnswer: const WiidgetOption(text: "Flamengo e Independiente", isCorrect: true)),
-  WidgetQuestion(
-      text: "Quem foi o goleiro menos vazado do Campeonato Brasileiro Série A em 2017?",
-      options: [
-        const WiidgetOption(text: "Cássio", isCorrect: true),
-        const WiidgetOption(text: "Vanderlei", isCorrect: false),
-        const WiidgetOption(text: "Fábio", isCorrect: false),
-        const WiidgetOption(text: "Jean", isCorrect: false),
-      ],
-      id: 10,
-      correctAnswer: const WiidgetOption(text: "Cássio", isCorrect: true)),
-  WidgetQuestion(
-      text: "Qual jogador brasileiro recebeu o prêmio de melhor jovem talento no futebol europeu em 2017?",
-      options: [
-        const WiidgetOption(text: "Gabriel Jesus", isCorrect: false),
-        const WiidgetOption(text: "Vinícius Júnior", isCorrect: true),
-        const WiidgetOption(text: "Richarlison", isCorrect: false),
-        const WiidgetOption(text: "Malcom", isCorrect: false),
-      ],
-      id: 11,
-      correctAnswer: const WiidgetOption(text: "Vinícius Júnior", isCorrect: true)),
+    text: "Quais foram os finalistas da Copa Sul-Americana em 2017?",
+    options: [
+      const WiidgetOption(text: "Flamengo e Independiente", isCorrect: true),
+      const WiidgetOption(text: "Atlético Mineiro e Nacional", isCorrect: false),
+      const WiidgetOption(text: "Corinthians e Racing", isCorrect: false),
+      const WiidgetOption(text: "Ponte Preta e Junior Barranquilla", isCorrect: false),
+    ],
+    id: 9,
+    correctAnswer: const WiidgetOption(text: "Flamengo e Independiente", isCorrect: true),
+  ),
 ];
